@@ -40,18 +40,11 @@ First we need to make a numpy array containing all of those above values.
 
 
 ```python
-marks = np.array([10,11,22,24,35,37,45,47,48,58,56,59,61,71,81,92,95])
+marks = None
 marks
 
 # array([10, 11, 22, 24, 35, 37, 45, 47, 48, 58, 56, 59, 61, 71, 81, 92, 95])
 ```
-
-
-
-
-    array([10, 11, 22, 24, 35, 37, 45, 47, 48, 58, 56, 59, 61, 71, 81, 92, 95])
-
-
 
 ### Create classes from data
 
@@ -77,19 +70,7 @@ We can now go ahead and create stems from grades. Perform following steps:
 ```python
 # Create a stems array to store the grades for all the marks in marks array, in the same order.
 stems = []
-for mark in marks:
-    if mark < 30:
-        stems.append(6)
-    elif mark >= 30 and mark <50:
-        stems.append(5)
-    elif mark >= 50 and mark <60:
-        stems.append(4)
-    elif mark >= 60 and mark <70:
-        stems.append(3)
-    elif mark >= 70 and mark <80:
-        stems.append(2)
-    else:
-        stems.append(1)
+
 stems
 
 # [6, 6, 6, 6, 5, 5, 5, 5, 5, 4, 4, 4, 3, 2, 1, 1, 1]
@@ -98,7 +79,7 @@ stems
 
 
 
-    [6, 6, 6, 6, 5, 5, 5, 5, 5, 4, 4, 4, 3, 2, 1, 1, 1]
+    []
 
 
 
@@ -122,16 +103,7 @@ And [here is the official documentation](https://matplotlib.org/api/_as_gen/matp
 ```python
 # Create a stem and leaf plot with above data
 
-plt.figure(figsize=(12,8))
-markerline, stemlines, baseline = plt.stem(stems, marks, '-.', 'o' )
 
-plt.xlim([0,7])
-plt.ylim([0,100])
-plt.title('Stem and Leaf plot for student marks', fontsize = 30 )
-plt.ylabel('Marks obtained / Leafs', fontsize = 20)
-plt.xlabel('Grades / Stems', fontsize = 20)
-
-plt.show()
 ```
 
 
@@ -147,11 +119,7 @@ Just to get a bit more intuition behind this, let's build a histogram and compar
 ```python
 # Create a histogram for marks
 
-plt.figure(figsize=(12,8))
-plt.hist(marks, bins=6);
-plt.ylabel('Frequency', fontsize = 20)
-plt.xlabel('Marks Range', fontsize = 20)
-plt.title('Students Marks')
+
 ```
 
 
