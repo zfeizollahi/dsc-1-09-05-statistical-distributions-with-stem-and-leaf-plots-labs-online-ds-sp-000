@@ -1,11 +1,18 @@
 
-# Stem and Leaf Plots - Lab
+# Statistical Distributions with stem and leaf plots - Lab
 
-## Objectives:
-* Create Stem and Leaf plots from given data in matplotlib
+## Introduction
+
+In this lab, you'll be able to practice your stem and leaf plots knowledge.
+
+## Objectives
+
+You will be able to:
+
+* Create stem and leaf plots from given data in matplotlib
 * Compare effectiveness of stem plots as compared to histograms
 
-## Problem - Analyzing Students Results
+## Analyzing Students Results
 
 Following is list of marks that students obtained in a certain project (out of 100). You can clearly see that there is quite a huge spread in the data reflecting a range of numbers going from 10 to 95. 
 
@@ -26,7 +33,7 @@ Once the criteria is established, we would like to see how many students fall in
 
 We shall go ahead and build a stem and leaf plot for this data. This plot would help us visualize above grading classes and how many students fall in each class.
 
-#### Let's get started 
+## Let's get started 
 First lets import necessary libraries. We would need numpy for processing data and matplotlib for visualizations. 
 
 
@@ -46,7 +53,7 @@ marks
 # array([10, 11, 22, 24, 35, 37, 45, 47, 48, 58, 56, 59, 61, 71, 81, 92, 95])
 ```
 
-### Create classes from data
+## Create classes from data
 
 With above data, we can develop a stem and leaf plot in a multutude of ways, 
 
@@ -85,7 +92,7 @@ stems
 
 Thats great, we can use our stems(grades) and leaves(marks) for visualizing a stem and leaf plot.
 
-###  Using `pyplot.stem()` 
+##  Using `pyplot.stem()` 
 
 the pyplot module in matplotlib comes packaged with a `.stem()` method for visualizing stem and leaf plots. Heres a general syntax for calling this method
 ```python
@@ -110,7 +117,7 @@ And [here is the official documentation](https://matplotlib.org/api/_as_gen/matp
 ![png](index_files/index_10_0.png)
 
 
-### Analyze the output
+## Analyzing the output
 So there we have it, our stem and leaf plot. We can quickly visualize the range of each class, through length of the stem (dotted lines) along with markers indicating individual values. We can also visualize how many students exist in each class. This helps us get a better insight of the data in hand.
 
 Just to get a bit more intuition behind this, let's build a histogram and compare both plots. Let's split this in 6 bins by passing the values matching our ranks. Its always a good idea to label and title your plots. 
@@ -137,7 +144,7 @@ Not **AS** revealing as the stem and leaf plot, right? You can probably play aro
 
 As we saw before, we can get an idea about the placement frequency  of marks in a certain class/grade, but theres no way to see individual values. For an indepth analysis, it is highly recommended to use the appropriate plotting style to have a clear understanding of underlying data. 
 
-### Level Up (Optional)
+## Level Up (Optional)
 
 Let's customize our stem and leaf plot a bit more to show high distinction , distinction , merit, pass and fail, instead of numbers from 1 - 6. You would need to create labels and pass it to `xticks()` attribute of the plot object to achieve this. 
 
