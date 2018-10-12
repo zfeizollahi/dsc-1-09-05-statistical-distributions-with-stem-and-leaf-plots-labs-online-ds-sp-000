@@ -1,5 +1,5 @@
 
-# Statistical Distributions with stem and leaf plots - Lab
+# Statistical Distributions with Stem and Leaf Plots - Lab
 
 ## Introduction
 
