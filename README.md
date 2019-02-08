@@ -49,8 +49,6 @@ First we need to make a numpy array containing all of those above values.
 ```python
 marks = None
 marks
-
-# array([10, 11, 22, 24, 35, 37, 45, 47, 48, 58, 56, 59, 61, 71, 81, 92, 95])
 ```
 
 ##  The `pyplot.stem()`  method
@@ -69,8 +67,6 @@ To do this, write a function or use a loop to seperate eachdata point into tens 
 # Create stems and leafs arrays to store the grades for all the marks in marks array, in the same order.
 stems = []
 leafs = []
-
-# [6, 6, 6, 6, 5, 5, 5, 5, 5, 4, 4, 4, 3, 2, 1, 1, 1]
 ```
 
 Great! Now that you have your stems and leafs defined, use the `pyplot.stem()` method to created a stem and leaf plot!   
@@ -87,7 +83,7 @@ Be sure to style your plot including:
 ```
 
 ## Analyzing the output
-So there we have it, our stem and leaf plot. We can quickly visualize the range of each class, through length of the stem (dotted lines) along with markers indicating individual values. We can also visualize how many students exist in each class. This helps us get a better insight of the data in hand.
+So there we have it, our stem and leaf plot. While all the underlying data is retrievable, the plot can be a little bizarre to decipher. The number of points shows how many data points are in each bucket. The x-axis, or stems, represent the tens digit of each datapoint. So we can see that since most points have a stem of 5 or below, most students scored in the 50s or lower on this exam.
 
 Just to get a bit more intuition behind this, let's build a histogram and compare both plots.
 
@@ -98,9 +94,7 @@ Just to get a bit more intuition behind this, let's build a histogram and compar
 
 ```
 
-Not **AS** revealing as the stem and leaf plot, right? You can probably play around a bit with bin size to make it a bit more revealing. 
-
-As we saw before, we can get an idea about the placement frequency  of marks in a certain class/grade, but theres no way to see individual values. For an indepth analysis, it is highly recommended to use the appropriate plotting style to have a clear understanding of underlying data. 
+While we can't retrieve the original data points, it is easier to visualize where the data lies. As we saw before, we can get an idea about the placement frequency of marks in a certain class/grade, but theres no way to see individual values. For an indepth analysis, it is highly recommended to use the appropriate plotting style to have a clear understanding of underlying data.
 
 ## Summary
 
