@@ -39,6 +39,7 @@ First lets import necessary libraries. We would need numpy for processing data a
 
 ```python
 import matplotlib.pyplot as plt
+%matplotlib inline
 import numpy as np
 plt.style.use('ggplot')
 ```
@@ -47,9 +48,16 @@ First we need to make a numpy array containing all of those above values.
 
 
 ```python
-marks = None
+marks = np.array([10,11,22,24,35,37,45,47,48,58,56,59,61,71,81,92,95])
 marks
 ```
+
+
+
+
+    array([10, 11, 22, 24, 35, 37, 45, 47, 48, 58, 56, 59, 61, 71, 81, 92, 95])
+
+
 
 ##  The `pyplot.stem()`  method
 
@@ -65,8 +73,13 @@ To do this, write a function or use a loop to seperate eachdata point into tens 
 
 ```python
 # Create stems and leafs arrays to store the grades for all the marks in marks array, in the same order.
-stems = []
+stems = []   
 leafs = []
+for i in marks:
+    stem = i // 10
+    leaf = i % 10
+    stems.append(stem)
+    leafs.append(leaf)
 ```
 
 Great! Now that you have your stems and leafs defined, use the `pyplot.stem()` method to created a stem and leaf plot!   
@@ -79,8 +92,25 @@ Be sure to style your plot including:
 
 ```python
 # Create a stem and leaf plot including the above styling
-
+plt.figure(figsize=(12,8))
+plt.stem(stems,leafs, '-.', 'o')
+plt.xticks(np.arange(10))
+plt.title('Stem and Leaf Plot for Student Marks', fontsize = 30 )
+plt.ylabel('Leafs', fontsize = 20)
+plt.xlabel('Stems', fontsize = 20)
+plt.show
 ```
+
+
+
+
+    <function matplotlib.pyplot.show(*args, **kw)>
+
+
+
+
+![png](index_files/index_8_1.png)
+
 
 ## Analyzing the output
 So there we have it, our stem and leaf plot. While all the underlying data is retrievable, the plot can be a little bizarre to decipher. The number of points shows how many data points are in each bucket. The x-axis, or stems, represent the tens digit of each datapoint. So we can see that since most points have a stem of 5 or below, most students scored in the 50s or lower on this exam.
@@ -90,9 +120,21 @@ Just to get a bit more intuition behind this, let's build a histogram and compar
 
 ```python
 # Create a histogram for marks
-
-
+plt.hist(marks, bins=10)
 ```
+
+
+
+
+    (array([2., 2., 1., 1., 3., 3., 1., 1., 1., 2.]),
+     array([10. , 18.5, 27. , 35.5, 44. , 52.5, 61. , 69.5, 78. , 86.5, 95. ]),
+     <a list of 10 Patch objects>)
+
+
+
+
+![png](index_files/index_10_1.png)
+
 
 While we can't retrieve the original data points, it is easier to visualize where the data lies. As we saw before, we can get an idea about the placement frequency of marks in a certain class/grade, but theres no way to see individual values. For an indepth analysis, it is highly recommended to use the appropriate plotting style to have a clear understanding of underlying data.
 
